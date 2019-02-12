@@ -1,0 +1,29 @@
+.App
+{
+    width: 300px;
+    margin: 0 auto;
+}
+.MainMenu li
+{
+    list-style: none;
+    text-decoration: none;
+    display: inline;
+    margin-right: 20px;
+}
+.MainMenu li a
+{
+    font-size: 23px;
+    font-weight: bold;
+    color: #008bff;
+    text-decoration: none;
+
+}
+ 
+.topics
+{
+    list-style:none;    
+}
+.topics li a
+{
+    text-decoration:none;
+}
