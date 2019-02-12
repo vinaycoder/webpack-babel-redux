@@ -4,7 +4,8 @@ module.exports= {
     entry: path.join(__dirname,'./src/index.js'),
     output: {
         filename: 'bundle.js',
-        path: path.join(__dirname, '/dist')
+        path: path.join(__dirname, '/dist'),
+        publicPath: '/'
     },
     module:
     {
@@ -16,11 +17,12 @@ module.exports= {
 
         }]
     },
+      devServer: {
+    historyApiFallback: true,
+  },
     plugins:[
         new HtmlWebpackPlugin({
-			template: 'src/index.html',
-			inject: 'body',
-			filename: 'index.html'
+			template: './src/index.html'
 		})
     ]
 }
