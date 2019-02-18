@@ -1,4 +1,4 @@
-# webpack-babel-redux
+# webpack babel redux devserver react router
 # in this repositry we can configure custom babel, webpack, react, react router and dev server
 1) How can you use this 
 2) Download this and use npm install 
