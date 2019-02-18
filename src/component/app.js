@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import {
   BrowserRouter as Router,  
-  Route,Link 
+  Route,Link ,Switch
 } from 'react-router-dom';
-
+import { connect } from 'react-redux';
+import Home from './homeContainer'
+import {getTopicsRequest} from '../redux/actions';
 import './styles.css'
-const Home = () =>(<div><h1> This is Home page</h1></div>);
+
 const Contact = ()=>(<div><h1> This is contact page</h1></div>);
 const Topics =() =>{
     return(
@@ -31,8 +33,8 @@ const Topic = (props) => {
 class App extends Component
 {         
         render() {
-    return (
-      <Router>
+        return (
+      <Router>        
       <div className="App">  
             <Route exact path='/' component={Home} />
             <Route path='/contact' component={Contact} />  
@@ -45,15 +47,22 @@ class App extends Component
         </ul>   
         <div>
         <img src="http://localhost:8080/src/component/blog-list1.png" style={{width:"100%"}} />
-        </div>   
-       
+        </div> 
       
-      </div>
-
+      </div>      
       </Router>
     );
   }
        
 }
 
-export default  App;
+const mapStateToProps = (state, ownProps) => {
+	return {
+		state: state
+	};
+};
+
+const mapDispatchToProps = dispatch => ({
+    getTopicsRequest: () => dispatch(getTopicsRequest())
+   })
+   export default connect(mapStateToProps, mapDispatchToProps)(App);
